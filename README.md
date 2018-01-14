@@ -1,0 +1,2 @@
+# analysis_of_economical_tendencies
+Analysis of Economical Tendencies
