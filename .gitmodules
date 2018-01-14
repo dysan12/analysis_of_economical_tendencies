@@ -1,0 +1,9 @@
+[submodule "service/stock_value_discrete_change"]
+	path = service/stock_value_discrete_change
+	url = https://github.com/dysan12/stock_value_discrete_change.git
+[submodule "service/currency_investing_profitability"]
+	path = service/currency_investing_profitability
+	url = https://github.com/dysan12/currency_investing_profitability.git
+[submodule "service/percentage_investment"]
+	path = service/percentage_investment
+	url = https://github.com/dysan12/percentage_investment.git
