@@ -7,3 +7,6 @@
 [submodule "service/percentage_investment"]
 	path = service/percentage_investment
 	url = https://github.com/dysan12/percentage_investment.git
+[submodule "service/utilities"]
+	path = service/utilities
+	url = https://github.com/dysan12/aet_utilities.git
