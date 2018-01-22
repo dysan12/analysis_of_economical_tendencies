@@ -10,6 +10,13 @@
 #define PORT 10000
 int main(int argc, char const *argv[])
 {
+    int a;
+    a = 4;
+
+    if (a == nullptr)
+    {
+
+    }
     Server::SocketManager manager(10000,"127.0.0.1");
     manager.prepareConnection();
     manager.listenForConnection();
