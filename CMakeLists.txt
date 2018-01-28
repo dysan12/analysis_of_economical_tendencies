@@ -24,4 +24,4 @@ add_executable(
         application/src/Exception/Exception.h
         service/utilities/ConnectionManager/Client/SocketManager.h
         service/utilities/ConnectionManager/Client/SocketManager.cpp
-        application/src/Routing/Parser/RequestParser.cpp application/src/Routing/Parser/RequestParser.h application/src/Routing/Parser/Request.h)
+        application/src/Routing/Parser/RequestParser.cpp application/src/Routing/Parser/RequestParser.h application/src/Routing/Parser/Request.h service/currency_investing_profitability/application/src/Controller/InvestmentProfitability/InvestmentProfitabilityController.cpp service/currency_investing_profitability/application/src/Controller/InvestmentProfitability/InvestmentProfitabilityController.h service/currency_investing_profitability/application/src/Controller/InvestmentProfitabilityAbstractController.h service/currency_investing_profitability/application/src/main.cpp service/utilities/JsonParser/JsonReader.cpp service/utilities/JsonParser/JsonReader.h service/utilities/JsonParser/JsonWriter.cpp service/utilities/JsonParser/JsonWriter.h)
