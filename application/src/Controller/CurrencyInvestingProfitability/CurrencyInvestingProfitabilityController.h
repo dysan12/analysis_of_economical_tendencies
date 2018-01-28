@@ -5,23 +5,25 @@
 #ifndef AET_CURRENCYINVESTINGPROFITABILITY_H
 #define AET_CURRENCYINVESTINGPROFITABILITY_H
 
-
+#include <iostream>
 #include "../AbstractController.h"
-
+#include "../../../../service/utilities/ConnectionManager/Client/SocketManager.h"
 
 class CurrencyInvestingProfitabilityController : public AbstractController {
 public:
+    CurrencyInvestingProfitabilityController();
+
     std::map<std::string, std::function<void()>> getActionsMap() override {
         using namespace std::string_literals;
         std::map<std::string, std::function<void()>> actionsMap = {
-                {"test", std::bind(&test, this)}};
+                {"getStatus", std::bind(&getStatus, this)}};
         return actionsMap;
     };
-    void test()
-    {
-        std::cout << "works";
-    }
 
+    void getStatus();
+    void setUp() override;
+private:
+    Client::SocketManager *socketManager;
 };
 
 #endif //AET_CURRENCYINVESTINGPROFITABILITY_H

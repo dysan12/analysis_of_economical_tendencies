@@ -5,12 +5,10 @@
 #ifndef AET_ABSTRACTCONTROLLER_H
 #define AET_ABSTRACTCONTROLLER_H
 
-#include <iostream>
 #include <map>
+#include <iostream>
 #include <functional>
 #include "../Exception/NotSupportedException.h"
-
-class AbstractController;
 
 class AbstractController {
 public:
@@ -20,13 +18,20 @@ public:
 
         auto action = actionMap.find(actionName);
         if(action != actionMap.end()) {
-            actionMap[actionName]();
+            try {
+                this->setUp();
+                actionMap[actionName]();
+            } catch (...) {
+                throw; // pass exception further
+            }
         } else {
             throw NotSupportedException("Requested action is not supported by controller!");
         }
     }
 
     virtual std::map<std::string, std::function<void()>> getActionsMap() = 0;
+
+    virtual void setUp(){};
 };
 
 

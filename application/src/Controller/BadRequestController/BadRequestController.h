@@ -6,7 +6,6 @@
 #define AET_BADREQUESTCONTROLLER_H
 
 
-#include "../AbstractController.h"
 
 class BadRequestController : public AbstractController{
     std::map <std::string, std::function<void()>> getActionsMap(){

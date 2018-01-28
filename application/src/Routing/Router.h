@@ -5,10 +5,8 @@
 #ifndef AET_ROUTING_H
 #define AET_ROUTING_H
 
-
 #include <vector>
 #include "Route.h"
-#include <iostream>
 
 namespace Routing
 {

@@ -8,7 +8,6 @@
 #include <iostream>
 #include "../Controller/AbstractController.h"
 
-
 namespace Routing
 {
     class Route {

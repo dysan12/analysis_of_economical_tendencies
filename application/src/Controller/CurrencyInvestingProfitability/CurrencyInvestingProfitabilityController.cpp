@@ -3,3 +3,23 @@
 //
 
 #include "CurrencyInvestingProfitabilityController.h"
+#include "../../../../config/config.h"
+
+CurrencyInvestingProfitabilityController::CurrencyInvestingProfitabilityController() {
+
+}
+
+void CurrencyInvestingProfitabilityController::getStatus()
+{
+    std::cout << this->socketManager->receiveData();
+}
+
+void CurrencyInvestingProfitabilityController::setUp(){
+    this->socketManager = new Client::SocketManager();
+    this->socketManager->prepareConnection();
+
+    this->socketManager->connectToServer(
+            CurrencyInvestingProfitability::serverAddress.port,
+            CurrencyInvestingProfitability::serverAddress.address
+    );
+};
