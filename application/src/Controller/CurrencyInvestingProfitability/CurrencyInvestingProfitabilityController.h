@@ -16,11 +16,11 @@ public:
     std::map<std::string, std::function<void()>> getActionsMap() override {
         using namespace std::string_literals;
         std::map<std::string, std::function<void()>> actionsMap = {
-                {"getStatus", std::bind(&getStatus, this)}};
+                {"calculate", std::bind(&calculateInvestingProfitability, this)}};
         return actionsMap;
     };
 
-    void getStatus();
+    void calculateInvestingProfitability();
     void setUp() override;
 private:
     Client::SocketManager *socketManager;

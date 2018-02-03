@@ -9,9 +9,12 @@ CurrencyInvestingProfitabilityController::CurrencyInvestingProfitabilityControll
 
 }
 
-void CurrencyInvestingProfitabilityController::getStatus()
+void CurrencyInvestingProfitabilityController::calculateInvestingProfitability()
 {
-    std::cout << this->socketManager->receiveData();
+    this->socketManager->sendData(
+            R"({"module": "calculateInvestingProfitability","firstCurrency": [1.23, 2.45, 4.32],"secondCurrency": [2.23, 3.45, 1.32]})"
+    );
+    std::string ret = this->socketManager->receiveData();
 }
 
 void CurrencyInvestingProfitabilityController::setUp(){

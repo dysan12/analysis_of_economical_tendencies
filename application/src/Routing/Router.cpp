@@ -11,7 +11,7 @@
 
 Routing::Router::Router() {
     this->map.push_back(new Route(
-            "currency_investing_profitability",
+            "cip",//"currency_investing_profitability",
             new CurrencyInvestingProfitabilityController())
     );
 }

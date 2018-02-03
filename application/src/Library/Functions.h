@@ -10,16 +10,16 @@
 #include <iterator>
 #include <sstream>
 
-std::string trim(std::string &text, char delimiter);
+void trim(std::string &text, char delimiter);
 std::vector<std::string> explode(std::string text, char delimiter);
 
-std::string trim(std::string &text, const char delimiter)
+void trim(std::string &text, const char delimiter)
 {
-    if (text[text.size() - 1] == delimiter) {
+    if (text.at(text.size() - 1) == delimiter) {
         text.erase(text.end() - 1);
     }
 
-    if (text[0] == delimiter) {
+    if (text.at(0) == delimiter) {
         text.erase(text.begin());
     }
 }
