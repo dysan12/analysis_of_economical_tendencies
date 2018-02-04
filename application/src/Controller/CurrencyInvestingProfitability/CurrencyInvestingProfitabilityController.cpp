@@ -19,7 +19,7 @@ void CurrencyInvestingProfitabilityController::calculateInvestingProfitability(s
     getline(file, input);
     this->socketManager->sendData(input.c_str());
 
-    std::cout << this->socketManager->receiveData();
+    std::cout << this->socketManager->receiveData() << std::endl;
 }
 
 void CurrencyInvestingProfitabilityController::setUp(){
