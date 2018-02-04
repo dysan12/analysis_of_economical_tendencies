@@ -9,6 +9,11 @@ int main(int argc, char const *argv[])
             std::cout << "Request path: " << std::endl &&
             std::getline(std::cin, requestPath)
             ) {
+        if (requestPath.size() < 3) {
+            std::cout << "Path too short" << std::endl;
+            continue;
+        }
+
         try {
             RequestParser requestParser(requestPath);
             Request::Request * request = requestParser.getRequest();
