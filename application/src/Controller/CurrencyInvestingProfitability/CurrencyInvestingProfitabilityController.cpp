@@ -17,18 +17,17 @@ void CurrencyInvestingProfitabilityController::calculateInvestingProfitability(s
     file.open(fileName);
     std::string input;
     getline(file, input);
-    this->socketManager->sendData(
-            R"({"module": "calculateInvestingProfitability","data": {"firstCurrency": [1.23, 2.45, 4.32],"secondCurrency": [2.23, 3.45, 1.32]}})"
-    );
-    std::string ret = this->socketManager->receiveData();
+    this->socketManager->sendData(input.c_str());
+
+    std::cout << this->socketManager->receiveData();
 }
 
 void CurrencyInvestingProfitabilityController::setUp(){
     this->socketManager = new Client::SocketManager();
-//    this->socketManager->prepareConnection();
-//
-//    this->socketManager->connectToServer(
-//            CurrencyInvestingProfitability::serverAddress.port,
-//            CurrencyInvestingProfitability::serverAddress.address
-//    );
+    this->socketManager->prepareConnection();
+
+    this->socketManager->connectToServer(
+            CurrencyInvestingProfitability::serverAddress.port,
+            CurrencyInvestingProfitability::serverAddress.address
+    );
 };
