@@ -12,15 +12,15 @@
 
 class AbstractController {
 public:
-    void dispatchAction(const std::string &actionName)
+    void dispatchAction(const std::string &actionName, std::string& inputFileName)
     {
-        std::map <std::string, std::function<void()>> actionMap = this->getActionsMap();
+        std::map <std::string, std::function<void(std::string inputFileName)>> actionMap = this->getActionsMap();
 
         auto action = actionMap.find(actionName);
         if(action != actionMap.end()) {
             try {
                 this->setUp();
-                actionMap[actionName]();
+                actionMap[actionName](inputFileName);
             } catch (...) {
                 throw; // pass exception further
             }
@@ -29,7 +29,7 @@ public:
         }
     }
 
-    virtual std::map<std::string, std::function<void()>> getActionsMap() = 0;
+    virtual std::map<std::string, std::function<void(std::string inputFileName)>> getActionsMap() = 0;
 
     virtual void setUp(){};
 };

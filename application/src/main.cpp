@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
             Routing::Route * route = router.resolve(request->getControllerName());
             AbstractController* controller = route->getController();
 
-            controller->dispatchAction(request->getAction());
+            controller->dispatchAction(request->getAction(), request->getParameters().at(0));
         } catch (Exception &exception) {
             std::cout << exception.getMessage() << std::endl;
         }

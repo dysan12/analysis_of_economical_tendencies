@@ -8,8 +8,8 @@
 
 
 class BadRequestController : public AbstractController{
-    std::map <std::string, std::function<void()>> getActionsMap(){
-        std::map <std::string, std::function<void()>> map;
+    std::map <std::string, std::function<void(std::string inputFileName)>> getActionsMap(){
+        std::map <std::string, std::function<void(std::string inputFileName)>> map;
         return map;
     };
 };
